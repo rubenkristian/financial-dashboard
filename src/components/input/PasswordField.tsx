@@ -7,7 +7,7 @@ interface PasswordFieldProps {
     show: boolean;
 }
 
-const PasswordField = ({className, OnChange, OnToggle, name, value, show = false}: PasswordFieldProps) => {
+const PasswordField = ({className, OnChange, name, value, show = false}: PasswordFieldProps) => {
     return (
         <div className={`flex ${className}`}>
             <input
