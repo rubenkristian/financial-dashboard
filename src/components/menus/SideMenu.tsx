@@ -17,7 +17,7 @@ type SideMenuProps = {
     OnMenuSelected: (menu: number) => void;
 }
 
-const SideMenu = ({children, className, menus, menuSelected=0, OnMenuSelected}: SideMenuProps) => {
+const SideMenu = ({children, className, menus, OnMenuSelected}: SideMenuProps) => {
     const navigate = useNavigate();
     const location = useLocation();
     const [isOpen, setIsOpen] = useState<boolean>(false);

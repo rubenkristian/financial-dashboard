@@ -82,7 +82,13 @@ const MyCard = ({data}: MyCardProps) => {
                 {
                     data.map(({balance, holder, valid, numbers}: MyCardData, index: number) => {
                         return (
-                            <Chip balance={balance} holder={holder} valid={valid} numbers={numbers}/>
+                            <Chip
+                                key={index}
+                                balance={balance} 
+                                holder={holder} 
+                                valid={valid} 
+                                numbers={numbers}
+                            />
                         );
                     })
                 }
