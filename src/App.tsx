@@ -77,7 +77,7 @@ function App() {
       }}
     >
       <div className="mt-header-mobile md:mt-header ml-0 md:ml-sidebar">
-        <div className="px-10 py-7-5">
+        <div className={`px-10 py-7-5 bg-default-background  ${menuSelected === 0 ? 'bg-white md:bg-default-background' : ''}`}>
           <Suspense fallback={<div>Loading...</div>}>
             <Routes>
               <Route path="/" element={<DashboardPage/>}/>
