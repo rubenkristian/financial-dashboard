@@ -31,10 +31,11 @@ const SideMenu = ({children, className, menus, OnMenuSelected}: SideMenuProps) =
         const activeIndex = menus && menus.findIndex((menu) => menu.path.includes(location.pathname));
         if (activeIndex !== -1) {
             const menuElement = menuRef.current.get(activeIndex ?? 0);
+            const size = 30;
             if (menuElement) {
                 setActiveStyle({
-                    top: menuElement.offsetTop,
-                    height: menuElement.offsetHeight,
+                    top: menuElement.offsetTop - (size / 2),
+                    height: menuElement.offsetHeight + size,
                 });
             }
 
@@ -87,7 +88,7 @@ const SideMenu = ({children, className, menus, OnMenuSelected}: SideMenuProps) =
                         }
                     </div>
                     <div
-                        className="absolute left-0 w-1 bg-black rounded-tr-lg rounded-br-lg transition-all duration-300"
+                        className="absolute left-0 w-1 h-h-3 bg-black rounded-tr-lg rounded-br-lg transition-all duration-300"
                         style={{
                             top: `${activeStyle.top}px`,
                             height: `${activeStyle.height}px`,
