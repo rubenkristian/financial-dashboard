@@ -24,7 +24,6 @@ const SideMenu = ({children, className, menus, OnMenuSelected}: SideMenuProps) =
     const navigate = useNavigate();
     const location = useLocation();
     const [isOpen, setIsOpen] = useState<boolean>(false);
-    const sidebarRef = useRef<HTMLDivElement>(null);
     const menuRef = useRef(new Map<number, HTMLDivElement>());
     const [activeStyle, setActiveStyle] = useState({ top: 0, height: 0 });
         
