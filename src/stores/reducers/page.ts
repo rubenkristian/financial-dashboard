@@ -1,4 +1,3 @@
-import { faker } from "@faker-js/faker";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface ImageState {
