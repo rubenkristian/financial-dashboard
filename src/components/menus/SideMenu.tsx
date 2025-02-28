@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Header from "../container/Header";
 import MenuItem from "./MenuItem";
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 
 interface MenuItem {
     icon: React.ElementType;
@@ -19,6 +19,7 @@ type SideMenuProps = {
 
 const SideMenu = ({children, className, menus, menuSelected=0, OnMenuSelected}: SideMenuProps) => {
     const navigate = useNavigate();
+    const location = useLocation();
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const sidebarRef = useRef<HTMLDivElement>(null);
 
@@ -43,7 +44,7 @@ const SideMenu = ({children, className, menus, menuSelected=0, OnMenuSelected}: 
     }, [isOpen]);
 
     return (
-        <div className={`w-screen h-screen ${className}`}>
+        <div className={`w-full h-screen ${className}`}>
             <Header
                 OnToggle={(toggle) => {
                     console.log("open");
@@ -65,7 +66,7 @@ const SideMenu = ({children, className, menus, menuSelected=0, OnMenuSelected}: 
                                 <MenuItem 
                                     label={label} 
                                     Icon={icon} 
-                                    selected={index === menuSelected} 
+                                    selected={location.pathname === path} 
                                     key={index}
                                     OnClick={async () => {
                                         await navigate(path);
@@ -78,7 +79,7 @@ const SideMenu = ({children, className, menus, menuSelected=0, OnMenuSelected}: 
                     }
                 </div>
             </div>
-            <div className="w-screen h-screen">
+            <div className="w-full h-screen">
                 {children}
             </div>
         </div>

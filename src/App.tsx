@@ -31,37 +31,37 @@ function App() {
         {
           'icon': TransferIcon,
           'label': 'Transactions',
-          'path': '/not-found',
+          'path': '/transactions',
         },
         {
           'icon': UserIcon,
           'label': 'Accounts',
-          'path': '/not-found',
+          'path': '/accounts',
         },
         {
           'icon': InvestmentIcon,
           'label': 'Investments',
-          'path': '/not-found',
+          'path': '/investments',
         },
         {
           'icon': CreditCardIcon,
           'label': 'Credit Cards',
-          'path': '/not-found',
+          'path': '/credit-cards',
         },
         {
           'icon': LoanIcon,
           'label': 'Loans',
-          'path': '/not-found',
+          'path': '/loans',
         },
         {
           'icon': ServiceIcon,
           'label': 'Services',
-          'path': '/not-found',
+          'path': '/serices',
         },
         {
           'icon': EconometricIcon,
           'label': 'My Privileges',
-          'path': '/not-found',
+          'path': '/my-previleges',
         },
         {
           'icon': SettingIcon,

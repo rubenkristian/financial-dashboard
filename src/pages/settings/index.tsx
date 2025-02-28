@@ -1,4 +1,4 @@
-import Heading from "../../components/label/Heading";
+import Text from "../../components/label/Text";
 import { Outlet, useNavigate } from "react-router";
 
 const SettingIndexPage = () => {
@@ -12,21 +12,21 @@ const SettingIndexPage = () => {
                         navigate('/setting');
                     }}
                 >
-                    <Heading as="span">Edit Profile</Heading>
+                    <Text as="span">Edit Profile</Text>
                 </div>
                 <div
                     onClick={() => {
                         navigate('/setting/preference');
                     }}
                 >
-                    <Heading as="span">Preferences</Heading>
+                    <Text as="span">Preferences</Text>
                 </div>
                 <div
                     onClick={() => {
                         navigate('/setting/security');
                     }}
                 >
-                    <Heading as="span">Security</Heading>
+                    <Text as="span">Security</Text>
                 </div>
             </div>
             <Outlet/>

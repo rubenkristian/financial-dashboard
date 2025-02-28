@@ -1,12 +1,12 @@
 import React from "react";
 
-interface HeadingProps {
+interface TextProps {
     children?: React.ReactNode;
     as: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'span' | 'p' | 'div';
     className?: string;
 }
 
-const Heading = ({children, as: Tag = "span", className = ""}: HeadingProps) => {
+const Text = ({children, as: Tag = "span", className = ""}: TextProps) => {
     const baseClass = 'font-inter';
     const sizes = {
         h1: 'text-head-1 leading-head-1',
@@ -23,4 +23,4 @@ const Heading = ({children, as: Tag = "span", className = ""}: HeadingProps) => 
     );
 }
 
-export default Heading;
+export default Text;

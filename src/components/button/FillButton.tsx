@@ -12,7 +12,10 @@ const FillButton = ({children, className, OnClick}: FillButtonProps) => {
             onClick={(e) => {
                 OnClick && OnClick(e);
             }}
-            className={`flex rounded-button items-start justify-center ${className}`}
+            className={`flex rounded-button items-center justify-center transition-all duration-200 
+                hover:bg-opacity-80 hover:scale-105 
+                active:scale-95 active:bg-opacity-70
+                cursor-pointer select-none ${className}`}
         >
             {children}
         </div>

@@ -1,4 +1,4 @@
-import Heading from "../label/Heading";
+import Text from "../label/Text";
 
 interface MenuItemProps {
     label: string;
@@ -16,7 +16,7 @@ const MenuItem = ({label, Icon, selected, OnClick}: MenuItemProps) => {
             className="flex items-center gap-6-5 h-default cursor-pointer"
         >
             <Icon color={selected ? '#232323' : '#B1B1B1'}/>
-            <Heading as="span" className={`font-medium text-lg ${selected ? 'text-label-selected' : 'text-label-unselected'}`}>{label}</Heading>
+            <Text as="span" className={`font-medium text-lg ${selected ? 'text-label-selected' : 'text-label-unselected'}`}>{label}</Text>
         </div>
     );
 }
