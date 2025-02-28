@@ -1,68 +1,76 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap";
+@import "tailwindcss";
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@theme {
+  --font-inter: "Inter", serif;
+  --text-head-1: 1.75rem;
+  --text-head-2: 1.5rem;
+  --text-head-3: 1.25rem;
+  --text-head-4: 1.125rem;
+  --text-head-5: 1rem;
+  --text-sl: 0.9375rem;
+  --text-logo: 1.5625rem;
+  --spacing-head-1: 2.12rem;
+  --spacing-head-2: 1.81rem;
+  --spacing-head-3: 1.51rem;
+  --spacing-head-4: 1.36rem;
+  --spacing-head-5: 1.21rem;
+  --spacing-chip-horizontal: 350px;
+  --spacing-chip-vertical: 235px;
+  --radius-chip: 25px;
+  --radius-input: 15px;
+  --radius-5xl: 50px;
+  --radius-search: 25px;
+  --spacing-default: 25px;
+  --spacing-mobile: 18px;
+  --radius-button: 15px;
+  --spacing-sidebar: 250px;
+  --color-default-background: #E6EFF5;
+  --spacing-header: 101px;
+  --spacing-header-mobile: 140px;
+  --spacing-appbar-mobile: 35px;
+  --color-greyish-blues: #F5F7FA;
+  --spacing-search-box: 40px;
+  --spacing-search-inside: 19px;
+  --spacing-item: 15px;
+  --color-text-placeholder: #8BA3CB;
+  --color-default: #343C6A;
+  --color-label-selected: #232323;
+  --color-label-gray: #718EBF;
+  --color-label-unselected: #B1B1B1;
+  --spacing-9-5: 2.375rem;
+  --spacing-21: 85px;
+  --spacing-6-5: 1.625rem;
+  --spacing-9-5: 2.375rem;
+  --spacing-12-5: 3.125rem;
+  --spacing-7-5: 1.875rem;
+  --spacing-8-5: 2.1875rem;
+  --spacing-15: 3.75rem;
+  --spacing-22: 5.625rem;
+  --breakpoint-md: 62.5rem;
+  --breakpoint-content: 93.75rem;
+  --spacing-7-5: 1.875rem;
+  --spacing-container-menu: 1110px;
+  --spacing-17: 74px;
+  --color-light-pastel-blue: #DFEAF2;
+  --spacing-form: 418px;
+  --spacing-horizontal-min: 265px;
+  --spacing-vertical-min: 170px;
+  --spacing-transaction: 55px;
+  --color-card: #FFF5D9;
+  --color-paypal: #E7EDFF;
+  --color-transfer: #DCFAF8;
+  --color-outcome: #FF4B4A;
+  --color-income: #41D4A8;
+  --color-light-black: #5B5A6F;
+  --color-light-gray-blue: #EDF1F7;
+  --spacing-5xl: 50px;
+  --color-border: #F4F5F7;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.rotate-y-180 {
+  transform: rotateY(180deg);
 }
