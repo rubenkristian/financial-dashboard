@@ -65,6 +65,7 @@
   --color-light-black: #5B5A6F;
   --color-light-gray-blue: #EDF1F7;
   --spacing-5xl: 50px;
+  --color-border: #F4F5F7;
 }
 
 .scrollbar-hide::-webkit-scrollbar {

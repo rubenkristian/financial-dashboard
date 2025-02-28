@@ -18,57 +18,59 @@ const ProfileTab = lazy(() => import('./pages/settings/profile'));
 const PreferenceTab = lazy(() => import('./pages/settings/preference'));
 const SecurityTab = lazy(() => import('./pages/settings/security'));
 
+const menus = [
+  {
+    'icon': HomeIcon,
+    'label': 'Dashboard',
+    'path': ['/'],
+  },
+  {
+    'icon': TransferIcon,
+    'label': 'Transactions',
+    'path': ['/transactions'],
+  },
+  {
+    'icon': UserIcon,
+    'label': 'Accounts',
+    'path': ['/accounts'],
+  },
+  {
+    'icon': InvestmentIcon,
+    'label': 'Investments',
+    'path': ['/investments'],
+  },
+  {
+    'icon': CreditCardIcon,
+    'label': 'Credit Cards',
+    'path': ['/credit-cards'],
+  },
+  {
+    'icon': LoanIcon,
+    'label': 'Loans',
+    'path': ['/loans'],
+  },
+  {
+    'icon': ServiceIcon,
+    'label': 'Services',
+    'path': ['/serices'],
+  },
+  {
+    'icon': EconometricIcon,
+    'label': 'My Privileges',
+    'path': ['/my-previleges'],
+  },
+  {
+    'icon': SettingIcon,
+    'label': 'Setting',
+    'path': ['/setting', '/setting/preference', '/setting/security'],
+  }
+];
+
 function App() {
   const [menuSelected, setMenuSelected] = useState<number>(0);
 
   return (
-    <SideMenu className={''} menus={[
-        {
-          'icon': HomeIcon,
-          'label': 'Dashboard',
-          'path': '/',
-        },
-        {
-          'icon': TransferIcon,
-          'label': 'Transactions',
-          'path': '/transactions',
-        },
-        {
-          'icon': UserIcon,
-          'label': 'Accounts',
-          'path': '/accounts',
-        },
-        {
-          'icon': InvestmentIcon,
-          'label': 'Investments',
-          'path': '/investments',
-        },
-        {
-          'icon': CreditCardIcon,
-          'label': 'Credit Cards',
-          'path': '/credit-cards',
-        },
-        {
-          'icon': LoanIcon,
-          'label': 'Loans',
-          'path': '/loans',
-        },
-        {
-          'icon': ServiceIcon,
-          'label': 'Services',
-          'path': '/serices',
-        },
-        {
-          'icon': EconometricIcon,
-          'label': 'My Privileges',
-          'path': '/my-previleges',
-        },
-        {
-          'icon': SettingIcon,
-          'label': 'Setting',
-          'path': '/setting',
-        }
-      ]}
+    <SideMenu className={''} menus={menus}
       menuSelected={menuSelected}
       OnMenuSelected={(menu: number) => {
         setMenuSelected(menu);
@@ -80,7 +82,7 @@ function App() {
             <Routes>
               <Route path="/" element={<DashboardPage/>}/>
               <Route path="/setting" element={<SettingPage/>}>
-                  <Route path="" element={<ProfileTab/>}/>
+                  <Route path=""  element={<ProfileTab/>}/>
                   <Route path="/setting/preference" element={<PreferenceTab/>}/>
                   <Route path="/setting/security" element={<SecurityTab/>}/>
               </Route>

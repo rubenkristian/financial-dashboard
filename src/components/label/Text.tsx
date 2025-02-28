@@ -4,9 +4,10 @@ interface TextProps {
     children?: React.ReactNode;
     as: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'span' | 'p' | 'div';
     className?: string;
+    OnClick?: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void;
 }
 
-const Text = ({children, as: Tag = "span", className = ""}: TextProps) => {
+const Text = ({children, as: Tag = "span", className = "", OnClick}: TextProps) => {
     const baseClass = 'font-inter';
     const sizes = {
         h1: 'text-head-1 leading-head-1',
@@ -19,7 +20,15 @@ const Text = ({children, as: Tag = "span", className = ""}: TextProps) => {
         div: '',
     }
     return (
-        <Tag className={`${baseClass} ${sizes[Tag]} ${className}`}>{children}</Tag>
+        <Tag 
+            onClick={(e) => {
+                OnClick && OnClick(e);
+            }} 
+            className={`${baseClass} ${sizes[Tag]} ${className}`}
+            title={React.Children.toArray(children).join('')}
+        >
+            {children}
+        </Tag>
     );
 }
 

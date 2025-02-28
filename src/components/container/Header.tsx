@@ -3,6 +3,8 @@ import Text from "../label/Text";
 import SearchField from "../input/SearchField";
 import IconCircle from "../icon/IconCircle";
 import { faker } from "@faker-js/faker";
+import { useSelector } from "react-redux";
+import { RootState } from "../../stores";
 
 interface HeaderProps {
     children?: React.ReactNode;
@@ -12,6 +14,9 @@ interface HeaderProps {
 }
 
 const Header = ({children, className, OnToggle, toggle}: HeaderProps) => {
+    const imageUrl = useSelector((state: RootState) => state.image.imageUrl);
+    const pageLabel = useSelector((state: RootState) => state.page.pageLabel);
+    
     return (
         <div className={`z-50 fixed top-0 left-0 w-screen h-header-mobile md:h-header bg-white ${className ?? ''}`}>
             <div
@@ -38,7 +43,7 @@ const Header = ({children, className, OnToggle, toggle}: HeaderProps) => {
                     <Text as="span" className="text-logo font-extrabold text-default">Soar Task</Text>
                 </div>
                 <div className="flex flex-grow items-center justify-between gap-2.5">
-                    <Text as="h1">Overview</Text>
+                    <Text as="h1">{pageLabel}</Text>
                     
                     <div className="flex items-center justify-between gap-8-5">
                         <div className="flex grow gap-7-5">
@@ -65,7 +70,7 @@ const Header = ({children, className, OnToggle, toggle}: HeaderProps) => {
                             </IconCircle>
                         </div>
                         <IconCircle className="h-15 w-15 bg-greyish-blues">
-                            <img src={faker.image.avatar()} className="h-15 w-15"/>
+                            <img src={imageUrl ?? faker.image.avatar()} className="h-15 w-15" alt="user profile picture"/>
                         </IconCircle>
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import Chip from "../card/Chip";
 import Text from "../label/Text";
+import { useNavigate } from "react-router";
 
 export interface MyCardData {
     balance: number;
@@ -18,8 +19,8 @@ const MyCard = ({data}: MyCardProps) => {
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
     const [scrollLeft, setScrollLeft] = useState(0);
-  
-    // Handle touch start (for swipe)
+    const navigate = useNavigate();
+    
     const handleTouchStart = (event: React.TouchEvent) => {
       if (scrollRef.current) {
         setStartX(event.touches[0].clientX);
@@ -27,7 +28,6 @@ const MyCard = ({data}: MyCardProps) => {
       }
     };
   
-    // Handle touch move (for swipe)
     const handleTouchMove = (event: React.TouchEvent) => {
       if (scrollRef.current) {
         const moveX = event.touches[0].clientX - startX;
@@ -36,7 +36,6 @@ const MyCard = ({data}: MyCardProps) => {
       }
     };
   
-    // Handle mouse down (start dragging)
     const handleMouseDown = (event: React.MouseEvent) => {
       if (scrollRef.current) {
         setIsDragging(true);
@@ -45,16 +44,14 @@ const MyCard = ({data}: MyCardProps) => {
       }
     };
   
-    // Handle mouse move (dragging effect)
     const handleMouseMove = (event: React.MouseEvent) => {
       if (!isDragging || !scrollRef.current) return;
       event.preventDefault();
       const x = event.pageX - scrollRef.current.offsetLeft;
-      const walk = (x - startX) * 2; // Adjust scroll speed
+      const walk = (x - startX) * 2; 
       scrollRef.current.scrollLeft = scrollLeft - walk;
     };
   
-    // Handle mouse up and mouse leave (stop dragging)
     const handleMouseUp = () => setIsDragging(false);
     const handleMouseLeave = () => setIsDragging(false);
 
@@ -65,6 +62,9 @@ const MyCard = ({data}: MyCardProps) => {
                 <Text 
                     as="div" 
                     className="cursor-pointer text-blue-500 hover:text-blue-700 active:text-blue-900 transition-colors duration-200"
+                    OnClick={() => {
+                        navigate('/credit-cards')
+                    }}
                 >
                     See All
                 </Text>
