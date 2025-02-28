@@ -1,6 +1,7 @@
 import React from "react";
 import Text from "../label/Text";
 import { formatCurrency } from "../../utils/currency";
+import ChipImage from '../../assets/white-chip.png';
 
 interface ChipProps {
     children?: React.ReactNode;
@@ -20,7 +21,7 @@ const Chip = ({balance, holder, valid, numbers, className}: ChipProps) => {
                         <Text as="span" className="font-normal text-xs text-white opacity-70">Balance</Text>
                         <Text as="span" className="font-semibold text-base text-white">{formatCurrency(balance)}</Text>
                     </div>
-                    <img className="w-[34.77px] h-[34.77px]" src="/public/white-chip.png" alt="white chip"/>
+                    <img className="w-[34.77px] h-[34.77px]" src={ChipImage} alt="white chip"/>
                 </div>
                 <div className="flex justify-between">
                     <div className="flex flex-col">

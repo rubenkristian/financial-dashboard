@@ -82,9 +82,9 @@ function App() {
             <Routes>
               <Route path="/" element={<DashboardPage/>}/>
               <Route path="/setting" element={<SettingPage/>}>
-                  <Route path=""  element={<ProfileTab/>}/>
-                  <Route path="/setting/preference" element={<PreferenceTab/>}/>
-                  <Route path="/setting/security" element={<SecurityTab/>}/>
+                <Route path=""  element={<ProfileTab/>}/>
+                <Route path="/setting/preference" element={<PreferenceTab/>}/>
+                <Route path="/setting/security" element={<SecurityTab/>}/>
               </Route>
               <Route path="*" element={<NotFoundPage/>}/>
             </Routes>

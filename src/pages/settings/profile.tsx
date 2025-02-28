@@ -5,8 +5,7 @@ import TextField from "../../components/input/TextField";
 import Text from "../../components/label/Text";
 import { useRef, useState } from "react";
 import { RootState } from "../../stores";
-import { setError, clearErrors } from "../../stores/reducers/formuser"; // Import Redux actions
-import { faker } from "@faker-js/faker";
+import { setError, clearErrors } from "../../stores/reducers/formuser";
 import { setImage } from "../../stores/reducers/image";
 
 const ProfileTab = () => {
@@ -79,7 +78,7 @@ const ProfileTab = () => {
                     <div className="flex w-full content:w-fit justify-center content:items-start items-center">
                         <div className="relative">
                             <IconCircle className="h-22 w-22 bg-amber-950">
-                                <img src={imageUrl ?? faker.image.avatar()} alt="user profile picture"/>
+                                <img src={imageUrl ?? ''} alt="user profile picture"/>
                             </IconCircle>
                             <IconCircle 
                                 className="absolute right-0 top-15 h-7-5 w-7-5 bg-label-selected"

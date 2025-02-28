@@ -2,7 +2,6 @@ import React from "react";
 import Text from "../label/Text";
 import SearchField from "../input/SearchField";
 import IconCircle from "../icon/IconCircle";
-import { faker } from "@faker-js/faker";
 import { useSelector } from "react-redux";
 import { RootState } from "../../stores";
 
@@ -70,7 +69,7 @@ const Header = ({children, className, OnToggle, toggle}: HeaderProps) => {
                             </IconCircle>
                         </div>
                         <IconCircle className="h-15 w-15 bg-greyish-blues">
-                            <img src={imageUrl ?? faker.image.avatar()} className="h-15 w-15" alt="user profile picture"/>
+                            <img src={imageUrl ?? ''} className="h-15 w-15" alt="user profile picture"/>
                         </IconCircle>
                     </div>
                 </div>
