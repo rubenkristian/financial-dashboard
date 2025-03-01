@@ -23,7 +23,9 @@ const TextField = ({className, name, OnChange, value, placeholder, type = 'text'
                 <input
                     className="w-full border-b border-transparent focus:outline-none placeholder-text-placeholder"
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                        OnChange && OnChange(e.target.value);
+                        if (OnChange) {
+                            OnChange(e.target.value);
+                        }
                     }}
                     id={name}
                     type={type}

@@ -25,7 +25,9 @@ const SearchField = ({className, name, OnChange, value, placeholder}: SearchFiel
             <input
                 className="w-full border-b border-transparent focus:outline-none placeholder-text-placeholder"
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                    OnChange && OnChange(e.target.value);
+                    if (OnChange) {
+                        OnChange(e.target.value);
+                    }
                 }}
                 type="search"
                 name={name}

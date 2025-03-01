@@ -14,7 +14,9 @@ const IconButton = ({className, OnClick}: IconButtonProps) => {
                 active:scale-95 active:bg-opacity-70
                 ${className}`}
             onClick={(e) => {
-                OnClick && OnClick(e);
+                if (OnClick) {
+                    OnClick(e);
+                }
             }}
         >
             <Text as="span" className="text-white font-medium text-head-5">Send</Text>
