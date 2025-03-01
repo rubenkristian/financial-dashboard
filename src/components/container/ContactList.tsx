@@ -23,16 +23,16 @@ const ContactList = ({data}: ContactListProps) => {
 
     const handleTouchStart = (event: React.TouchEvent) => {
         if (scrollRef.current) {
-        setStartX(event.touches[0].clientX);
-        setScrollLeft(scrollRef.current.scrollLeft);
+            setStartX(event.touches[0].clientX);
+            setScrollLeft(scrollRef.current.scrollLeft);
         }
     };
 
     const handleTouchMove = (event: React.TouchEvent) => {
         if (scrollRef.current) {
-        const moveX = event.touches[0].clientX - startX;
-        event.preventDefault();
-        scrollRef.current.scrollLeft = scrollLeft - moveX;
+            const moveX = event.touches[0].clientX - startX;
+            event.preventDefault();
+            scrollRef.current.scrollLeft = scrollLeft - moveX;
         }
     };
 
@@ -81,19 +81,22 @@ const ContactList = ({data}: ContactListProps) => {
             checkScrollPosition();
         };
 
-        if (scrollRef.current) {
-          scrollRef.current.addEventListener("scroll", checkScrollPosition);
+        const current = scrollRef.current;
+
+        if (current) {
+          current.addEventListener("scroll", checkScrollPosition);
           checkScrollPosition()
         }
 
         window.addEventListener("resize", handleResize);
         return () => {
-          if (scrollRef.current) {
-            scrollRef.current.removeEventListener("scroll", checkScrollPosition);
+          if (current) {
+            current.removeEventListener("scroll", checkScrollPosition);
           }
           window.removeEventListener("resize", handleResize);
         };
-      }, []);
+    }, [scrollRef]);
+
     return (
         <div
             className="relative w-full"

@@ -22,7 +22,9 @@ const Text = ({children, as: Tag = "span", className = "", OnClick}: TextProps) 
     return (
         <Tag 
             onClick={(e) => {
-                OnClick && OnClick(e);
+                if (OnClick) {
+                    OnClick(e);
+                }
             }} 
             className={`${baseClass} ${sizes[Tag]} ${className}`}
             title={React.Children.toArray(children).join('')}

@@ -43,16 +43,16 @@ const ExpenseStatistics = ({data}: ExpenseStatisticsrops) => {
                 <ResponsiveContainer>
                 <PieChart>
                     <Pie
-                    data={data}
-                    labelLine={false}
-                    label={renderCustomizedLabel}
-                    outerRadius={120}
-                    fill="#8884d8"
-                    dataKey="value"
+                        data={data}
+                        labelLine={false}
+                        label={renderCustomizedLabel}
+                        outerRadius={120}
+                        fill="#8884d8"
+                        dataKey="value"
                     >
-                    {data.map((_, index) => (
-                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                    ))}
+                        {data.map((_, index) => (
+                            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                        ))}
                     </Pie>
                 </PieChart>
                 </ResponsiveContainer>

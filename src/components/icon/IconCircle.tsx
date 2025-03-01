@@ -11,7 +11,9 @@ const IconCircle = ({children, className, OnClick}: IconCircleProps) => {
         <div 
             className={`flex p-0 ${className} rounded-full justify-center items-center overflow-clip`}
             onClick={() => {
-                OnClick && OnClick();
+                if (OnClick) {
+                    OnClick();
+                }
             }}
         >
             {children}

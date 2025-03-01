@@ -44,7 +44,7 @@ const SideMenu = ({children, className, menus, OnMenuSelected}: SideMenuProps) =
             }
         }
         window.scrollTo(0, 0);
-    }, [location.pathname, menus]);
+    }, [location.pathname, menus, dispatch]);
 
     return (
         <div className={`w-full h-screen ${className}`}>

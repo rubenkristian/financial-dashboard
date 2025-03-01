@@ -10,7 +10,9 @@ const FillButton = ({children, className, OnClick}: FillButtonProps) => {
     return (
         <div
             onClick={(e) => {
-                OnClick && OnClick(e);
+                if (OnClick) {
+                    OnClick(e);
+                }
             }}
             className={`flex rounded-button items-center justify-center transition-all duration-200 
                 hover:bg-opacity-80 hover:scale-105 

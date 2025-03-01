@@ -83,7 +83,9 @@ const ProfileTab = () => {
                         <IconCircle 
                             className="absolute right-0 top-15 h-7-5 w-7-5 bg-label-selected"
                             OnClick={() => {
-                                fileInputRef && fileInputRef.current?.click();
+                                if (fileInputRef) {
+                                    fileInputRef.current?.click();
+                                }
                             }}
                         >
                             <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
