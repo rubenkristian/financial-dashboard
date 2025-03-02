@@ -34,8 +34,10 @@ const Header = ({children, className, OnToggle, toggle}: HeaderProps) => {
                             <path fillRule="evenodd" clipRule="evenodd" d="M18 0.999998C18 1.55228 17.4801 2 16.8387 2L1.16129 2C0.519928 2 -6.78526e-08 1.55229 -4.37115e-08 1C-1.95704e-08 0.447719 0.519928 3.94468e-06 1.16129 3.7939e-06L16.8387 -5.07615e-08C17.4801 -2.61145e-07 18 0.447714 18 0.999998Z" fill="#343C6A"/>
                         </svg>
                     </div>
-                    <Text as="h3" className={"text-default font-extrabold    "}>Overview</Text>
-                    <div className="h-appbar-mobile w-appbar-mobile rounded-full bg-amber-950"></div>
+                    <Text as="h3" className={"text-default font-extrabold"}>Overview</Text>
+                    <IconCircle className="h-appbar-mobile w-appbar-mobile">
+                        <img src={imageUrl ?? ''} className="h-appbar-mobile" alt="user profile picture"/>
+                    </IconCircle>
                 </div>
                 <SearchField placeholder="Search for something"/>
             </div>

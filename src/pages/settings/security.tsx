@@ -1,7 +1,7 @@
 const SecurityTab = () => {
     return (
         <div className="flex flex-col gap-10">
-            Under Construction
+            Sorry the page is still under development.
         </div>
     );
 }
