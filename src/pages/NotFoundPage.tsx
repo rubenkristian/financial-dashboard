@@ -1,6 +1,8 @@
 const NotFoundPage = () => {
     return (
-        <div>404: Not Found</div>
+        <div className="flex flex-col gap-10">
+            Sorry the page is still under development.
+        </div>
     );
 }
 
